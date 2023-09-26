@@ -1,9 +1,15 @@
 # XiaoyueMa - Results
-## [Live Demo](https://caballoma.github.io/hw01-fireball-base/)
+## [Live Demo](https://caballoma.github.io/hw01-fireball/)
 ## FireBall Man
+
+**I created a Fireball god with a huge halo behind it:** 
+
 ![](screenshot.gif)
 
+
 ## GUI Functions
+**You can adjust the inner and outer colors of the Fireball God and the eye distance according to the UI, and you can also adjust the color of the halo, reset button can help you return to the default status:** 
+
 ![](screenshot2.gif)
 
 
