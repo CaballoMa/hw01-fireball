@@ -1,3 +1,12 @@
+# XiaoyueMa - Results
+## [Live Demo](https://caballoma.github.io/hw01-fireball-base/)
+## FireBall Man
+![](screenshot.gif)
+
+## GUI Functions
+![](screenshot2.gif)
+
+
 # [Project 1: Noise](https://github.com/CIS-566-Fall-2022/hw01-fireball-base)
 
 ## Objective

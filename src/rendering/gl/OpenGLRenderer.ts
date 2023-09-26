@@ -22,13 +22,29 @@ class OpenGLRenderer {
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
   }
 
-  render(camera: Camera, prog: ShaderProgram, drawables: Array<Drawable>, time: number) {
-    prog.setEyeRefUp(camera.controls.eye, camera.controls.center, camera.controls.up);
-    prog.setTime(time);
+  render(camera: Camera, prog: ShaderProgram, drawables: Array<Drawable>, inFireBallColorVec : vec4, outFireBallColorVec : vec4, eyeDistance : number, time : number) {
+    let model = mat4.create();
+    let viewProj = mat4.create();
 
+    mat4.identity(model);
+    mat4.multiply(viewProj, camera.projectionMatrix, camera.viewMatrix);
+    prog.setModelMatrix(model);
+    prog.setViewProjMatrix(viewProj);
+    prog.setEyeDistance(eyeDistance);
+    prog.setInFireBallColor(inFireBallColorVec);
+    prog.setOutFireBallColor(outFireBallColorVec);
+    
+    prog.setTime(time);
     for (let drawable of drawables) {
       prog.draw(drawable);
     }
+  }
+
+  drawBackground(camera: Camera, prog: ShaderProgram, inCircleColorVec : vec4, outCircleColorVec : vec4, time : number) {
+    prog.setTime(time);
+    prog.setInCircleColor(inCircleColorVec);
+    prog.setOutCircleColor(outCircleColorVec);
+    prog.drawQuad();
   }
 };
 
